@@ -36,6 +36,10 @@ body {
   max-width: 480px;
 }
 
+.header {
+  margin: 0 auto;
+}
+
 /* Todo form styles */
 .todo-form input,
 .todo-item {

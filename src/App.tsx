@@ -81,7 +81,7 @@ const App = () => {
 
   return (
     <div className="todo-list-app">
-      <h3>To-do List</h3>
+      <h2 className="header">To-do List</h2>
       <TodoForm todos={todos} handleTodoCreate={handleTodoCreate} />
 
       <TodoList
@@ -91,6 +91,7 @@ const App = () => {
         handleTodoComplete={handleTodoComplete}
         handleTodoBlur={handleTodoBlur}
       />
+      <input type="text" placeholder="Enter new task" />
     </div>
   );
 };

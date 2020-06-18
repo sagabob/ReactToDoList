@@ -1,9 +1,27 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+
 import App from "./App";
 
-test("renders to-do list title", () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/to-do list/i);
-  expect(linkElement).toBeInTheDocument();
+afterEach(cleanup);
+
+describe("App", () => {
+  it("has to-do list title", () => {
+    render(<App />);
+    expect(screen.getByText(/to-do list/i)).toBeInTheDocument();
+  });
+
+  it("has an input  with placeholder 'Enter new todo'", () => {
+    const { getByPlaceholderText } = render(<App />);
+
+    expect(getByPlaceholderText(/enter new todo/i)).toBeInTheDocument();
+  });
+
+  test("enter a new task with name", () => {
+    const { getByPlaceholderText } = render(<App />);
+
+    let inputTask = getByPlaceholderText(/Enter new task/i);
+
+    expect(inputTask).toBeInTheDocument();
+  });
 });
