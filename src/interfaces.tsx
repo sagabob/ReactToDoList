@@ -4,9 +4,12 @@ export interface TodoInterface {
   isCompleted: boolean;
 }
 
+export interface TodoItemsInterface {
+  starterTodos: TodoInterface[];
+}
+
 // Todo form interface
 export interface TodoFormInterface {
-  todos: TodoInterface[];
   handleTodoCreate: (todo: TodoInterface) => void;
 }
 

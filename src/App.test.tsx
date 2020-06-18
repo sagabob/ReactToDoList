@@ -1,27 +1,27 @@
 import React from "react";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-
+import { render, fireEvent, screen } from "@testing-library/react";
 import App from "./App";
+import { TodoInterface } from "./interfaces";
 
-afterEach(cleanup);
+const starter: TodoInterface[] = [];
 
 describe("App", () => {
   it("has 'to-do list' title", () => {
-    render(<App />);
+    render(<App starterTodos={starter} />);
 
     // expect to see the title on top
     expect(screen.getByText(/to-do list/i)).toBeInTheDocument();
   });
 
-  it("has an input with placeholder 'Enter new todo'", () => {
-    const { getByPlaceholderText } = render(<App />);
+  it("has an input to enter tasks", () => {
+    const { getByPlaceholderText } = render(<App starterTodos={starter} />);
 
     // expect to see the input field to creat new task
     expect(getByPlaceholderText(/enter new todo/i)).toBeInTheDocument();
   });
 
   test("enter a new task with name", () => {
-    const { getByPlaceholderText } = render(<App />);
+    const { getByPlaceholderText } = render(<App starterTodos={starter} />);
 
     // locate the input
     let inputTask = getByPlaceholderText(/Enter new todo/i);
@@ -33,6 +33,29 @@ describe("App", () => {
     fireEvent.keyPress(inputTask, { key: "Enter", code: 13, charCode: 13 });
 
     // we expect to see the task 'task 1'
-    expect(screen.getByText(/task 1/i)).toBeInTheDocument();
+    expect(screen.getByDisplayValue(/task 1/i)).toBeInTheDocument();
+    expect(screen.getByText(/x/i)).toBeInTheDocument();
+  });
+
+  test("click x to remove an existing task", () => {
+    const starterAlt: TodoInterface[] = [
+      {
+        id: "123",
+        text: "task 1",
+        isCompleted: false,
+      },
+    ];
+
+    render(<App starterTodos={starterAlt} />);
+
+    expect(screen.getByDisplayValue(/task 1/i)).toBeInTheDocument();
+
+    const getDeleteIcon = screen.getByText(/x/i);
+
+    expect(getDeleteIcon).toBeInTheDocument();
+
+    fireEvent.click(getDeleteIcon);
+
+    expect(screen.queryByText(/task 1/i)).toBeNull();
   });
 });
