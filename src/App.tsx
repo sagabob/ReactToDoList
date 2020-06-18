@@ -91,7 +91,6 @@ const App = () => {
         handleTodoComplete={handleTodoComplete}
         handleTodoBlur={handleTodoBlur}
       />
-      <input type="text" placeholder="Enter new task" />
     </div>
   );
 };
