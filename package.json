@@ -23,7 +23,7 @@
     "test": "react-scripts test ",
     "eject": "react-scripts eject",
     "citest": "CI=true react-scripts test",
-    "ctest": "CI=true react-scripts test --coverage --testResultsProcessor=jest-junit-reporter"
+    "ctest": "react-scripts test --coverage --testResultsProcessor=jest-junit-reporter"
   },
   "eslintConfig": {
     "extends": "react-app"
