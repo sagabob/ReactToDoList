@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="5" failures="0" time="6.362">
+  <testsuite name="Todo form" errors="0" failures="0" skipped="0" timestamp="2020-06-20T09:04:56" time="3.668" tests="1">
+    <testcase classname="Todo form has an input with placeholder &apos;Enter new todo&apos;" name="Todo form has an input with placeholder &apos;Enter new todo&apos;" time="0.032">
+    </testcase>
+  </testsuite>
+  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2020-06-20T09:04:56" time="3.74" tests="4">
+    <testcase classname="App has &apos;to-do list&apos; title" name="App has &apos;to-do list&apos; title" time="0.035">
+    </testcase>
+    <testcase classname="App has an input to enter tasks" name="App has an input to enter tasks" time="0.005">
+    </testcase>
+    <testcase classname="App enter a new task with name" name="App enter a new task with name" time="0.023">
+    </testcase>
+    <testcase classname="App click x to remove an existing task" name="App click x to remove an existing task" time="0.009">
+    </testcase>
+  </testsuite>
+</testsuites>
