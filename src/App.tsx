@@ -6,14 +6,14 @@ import TodoForm from "./components/todo-form";
 import TodoList from "./components/todo-list";
 
 // Import interfaces
-import { TodoInterface, TodoItemsInterface } from "./interfaces";
+import { TodoInterface } from "./interfaces";
 
 // Import styles
 import "./styles/styles.css";
 
 // TodoListApp component
-const App = (props: TodoItemsInterface) => {
-  const [todos, setTodos] = React.useState<TodoInterface[]>(props.starterTodos);
+const App = () => {
+  const [todos, setTodos] = React.useState<TodoInterface[]>([]);
 
   // Creating new todo item
   function handleTodoCreate(todo: TodoInterface) {
