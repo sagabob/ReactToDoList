@@ -31,6 +31,7 @@ describe("App", () => {
 
     // we expect to see the task 'task 1'
     expect(screen.getByDisplayValue(/task 1/i)).toBeInTheDocument();
+
     expect(screen.getByText(/x/i)).toBeInTheDocument();
   });
 });
