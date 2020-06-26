@@ -3,13 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { TodoInterface } from "./interfaces";
-
-const starter: TodoInterface[] = [];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App starterTodos={starter} />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
