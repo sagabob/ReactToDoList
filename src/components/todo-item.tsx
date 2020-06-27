@@ -25,17 +25,16 @@ const TodoItem = (props: TodoItemInterface) => {
           }
         />
       </div>
-
+      <ProgressItem
+        progress={props.todo.progress}
+        invokeProgress={props.invokeProgress}
+      />
       <div
         className="item-remove"
         onClick={() => props.handleTodoRemove(props.todo.id)}
       >
         x
       </div>
-      <ProgressItem
-        progress={props.todo.progress}
-        invokeProgress={props.invokeProgress}
-      />
     </div>
   );
 };

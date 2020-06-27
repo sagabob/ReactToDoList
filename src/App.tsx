@@ -85,7 +85,9 @@ const App = () => {
 
   return (
     <div className="todo-list-app">
-      <h2 className="header">To-do List</h2>
+      <h1 className="header">To-do List</h1>
+
+      <h3 className="sub-header">Working List</h3>
       <TodoForm handleTodoCreate={handleTodoCreate} />
 
       <TodoList
@@ -96,6 +98,8 @@ const App = () => {
         handleTodoBlur={handleTodoBlur}
         invokeProgress={handleInvokeProgress}
       />
+
+      <h3 className="sub-header">Done List</h3>
     </div>
   );
 };

@@ -29,6 +29,7 @@ const TodoForm = (props: TodoFormInterface) => {
         id: shortid.generate(),
         text: formState,
         isCompleted: false,
+        progress: 0,
       };
 
       // Create new todo item
