@@ -19,7 +19,6 @@ const TodoList = (props: TodoListInterface) => {
                 <TodoItem
                   todo={todo}
                   handleTodoUpdate={props.handleTodoUpdate}
-                  handleTodoRemove={props.handleTodoRemove}
                   handleTodoComplete={props.handleTodoComplete}
                   handleTodoBlur={props.handleTodoBlur}
                   invokeProgress={props.invokeProgress}

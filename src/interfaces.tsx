@@ -16,11 +16,15 @@ export interface TodoListInterface {
     event: React.ChangeEvent<HTMLInputElement>,
     id: string
   ) => void;
-  handleTodoRemove: (id: string) => void;
+
   handleTodoComplete: (id: string) => void;
   handleTodoBlur: (event: React.ChangeEvent<HTMLInputElement>) => void;
   invokeProgress: (input: number) => void;
   todos: TodoInterface[];
+}
+
+export interface TodoListAltInterface {
+  todosAlt: TodoInterface[];
 }
 
 // Todo item interface
@@ -29,7 +33,7 @@ export interface TodoItemInterface {
     event: React.ChangeEvent<HTMLInputElement>,
     id: string
   ) => void;
-  handleTodoRemove: (id: string) => void;
+
   handleTodoComplete: (id: string) => void;
   handleTodoBlur: (event: React.ChangeEvent<HTMLInputElement>) => void;
   invokeProgress: (input: number) => void;

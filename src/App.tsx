@@ -10,6 +10,7 @@ import { TodoInterface } from "./interfaces";
 
 // Import styles
 import "./styles/styles.css";
+import TodoListAlt from "./components/todo-list-alt";
 
 // TodoListApp component
 const App = () => {
@@ -44,15 +45,6 @@ const App = () => {
   }
 
   // Remove existing todo item
-  function handleTodoRemove(id: string) {
-    // Prepare new todos state
-    const newTodosState: TodoInterface[] = todos.filter(
-      (todo: TodoInterface) => todo.id !== id
-    );
-
-    // Update todos state
-    setTodos(newTodosState);
-  }
 
   // Check existing todo item as completed
   function handleTodoComplete(id: string) {
@@ -87,19 +79,19 @@ const App = () => {
     <div className="todo-list-app">
       <h1 className="header">To-do List</h1>
 
-      <h3 className="sub-header">Working List</h3>
+      <h3 className="sub-header">Working...</h3>
       <TodoForm handleTodoCreate={handleTodoCreate} />
 
       <TodoList
         todos={todos}
         handleTodoUpdate={handleTodoUpdate}
-        handleTodoRemove={handleTodoRemove}
         handleTodoComplete={handleTodoComplete}
         handleTodoBlur={handleTodoBlur}
         invokeProgress={handleInvokeProgress}
       />
 
-      <h3 className="sub-header">Done List</h3>
+      <h3 className="sub-header-alt">Done...</h3>
+      <TodoListAlt todosAlt={todos} />
     </div>
   );
 };

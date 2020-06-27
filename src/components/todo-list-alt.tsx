@@ -1,21 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // Import dependencies
 import React from "react";
+import { TodoListAltInterface } from "../interfaces";
+import TodoItemAlt from "./todo-item-alt";
 
 // Import interfaces
 
-import TodoItemAlt from "./todo-item-alt";
-import { TodoInterface } from "../interfaces";
-
 // TodoList component
-const TodoListAlt = (props: TodoInterface[]) => {
+const TodoListAlt = (props: TodoListAltInterface) => {
   return (
     <div className="todo-list">
       <ul>
-        {props.map(
-          (todo) =>
-            todo.isCompleted && (
-              <li key={todo.id}>
-                <TodoItemAlt {...todo} />
+        {props.todosAlt.map(
+          (item) =>
+            item.isCompleted && (
+              <li key={item.id}>
+                <TodoItemAlt {...item} />
               </li>
             )
         )}
