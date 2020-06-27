@@ -16,6 +16,7 @@ body {
 
 body {
   margin: 0;
+  background-color: #3498db;
 }
 
 #root,
@@ -88,6 +89,7 @@ body {
   flex-flow: row nowrap;
   align-items: center;
   padding: 8px;
+  background-color: white;
 }
 
 .todo-form + .todo-list ul .todo-item {
@@ -122,7 +124,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1px solid #ececec;
+  border: 1px solid #3498db;
   transition: 0.25s all ease-in-out;
 }
 

@@ -12,7 +12,7 @@ const TodoItemAlt = (props: TodoInterface) => {
       </div>
 
       <div className="todo-item-input-wrapper">
-        <input value={props.text} />
+        <input value={props.text} readOnly />
       </div>
     </div>
   );
