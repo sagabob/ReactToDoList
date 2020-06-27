@@ -20,6 +20,7 @@ const TodoList = (props: TodoListInterface) => {
               handleTodoRemove={props.handleTodoRemove}
               handleTodoComplete={props.handleTodoComplete}
               handleTodoBlur={props.handleTodoBlur}
+              invokeProgress={props.invokeProgress}
             />
           </li>
         ))}

@@ -79,6 +79,10 @@ const App = () => {
     }
   }
 
+  function handleInvokeProgress(input: number) {
+    console.log(input);
+  }
+
   return (
     <div className="todo-list-app">
       <h2 className="header">To-do List</h2>
@@ -90,6 +94,7 @@ const App = () => {
         handleTodoRemove={handleTodoRemove}
         handleTodoComplete={handleTodoComplete}
         handleTodoBlur={handleTodoBlur}
+        invokeProgress={handleInvokeProgress}
       />
     </div>
   );

@@ -2,7 +2,7 @@ export interface TodoInterface {
   id: string;
   text: string;
   isCompleted: boolean;
-  progress: TodoProgressInterface;
+  progress: number;
 }
 
 // Todo form interface
@@ -19,6 +19,7 @@ export interface TodoListInterface {
   handleTodoRemove: (id: string) => void;
   handleTodoComplete: (id: string) => void;
   handleTodoBlur: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  invokeProgress: (input: number) => void;
   todos: TodoInterface[];
 }
 
@@ -31,14 +32,11 @@ export interface TodoItemInterface {
   handleTodoRemove: (id: string) => void;
   handleTodoComplete: (id: string) => void;
   handleTodoBlur: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  invokeProgress: (input: number) => void;
   todo: TodoInterface;
 }
 
-export interface TodoProgressInterface {
-  progress: ProgressInterface;
-  invokeProgress: (input: ProgressInterface) => void;
-}
-
 export interface ProgressInterface {
+  invokeProgress: (input: number) => void;
   progress: number;
 }

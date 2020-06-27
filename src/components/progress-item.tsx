@@ -1,8 +1,8 @@
 import React from "react";
-import { TodoProgressInterface, ProgressInterface } from "../interfaces";
+import { ProgressInterface } from "../interfaces";
 
-const ProgressItem = (props: TodoProgressInterface) => {
-  const [progressState, setprogressState] = React.useState<ProgressInterface>(
+const ProgressItem = (props: ProgressInterface) => {
+  const [progressState, setprogressState] = React.useState<number>(
     props.progress
   );
 
@@ -10,13 +10,11 @@ const ProgressItem = (props: TodoProgressInterface) => {
     // Prepare new todos state
     switch (e.currentTarget.innerText) {
       case "-":
-        progressState.progress = progressState.progress - 1;
-        setprogressState(progressState);
+        setprogressState(progressState - 1);
         break;
 
       case "+":
-        progressState.progress = progressState.progress + 1;
-        setprogressState(progressState);
+        setprogressState(progressState + 1);
         break;
     }
 
@@ -26,7 +24,7 @@ const ProgressItem = (props: TodoProgressInterface) => {
   return (
     <div>
       <button onClick={handleUpdateProgress}>-</button>
-      {progressState.progress}
+      {progressState}
       <button onClick={handleUpdateProgress}>+</button>
     </div>
   );

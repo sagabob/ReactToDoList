@@ -2,6 +2,7 @@
 import React from "react";
 // Import interfaces
 import { TodoItemInterface } from "./../interfaces";
+import ProgressItem from "./progress-item";
 
 // TodoItem component
 const TodoItem = (props: TodoItemInterface) => {
@@ -31,6 +32,10 @@ const TodoItem = (props: TodoItemInterface) => {
       >
         x
       </div>
+      <ProgressItem
+        progress={props.todo.progress}
+        invokeProgress={props.invokeProgress}
+      />
     </div>
   );
 };
