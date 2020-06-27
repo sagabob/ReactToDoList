@@ -32,3 +32,12 @@ export interface TodoItemInterface {
   handleTodoBlur: (event: React.ChangeEvent<HTMLInputElement>) => void;
   todo: TodoInterface;
 }
+
+export interface TodoProgressInterface {
+  progress: ProgressInterface;
+  updateProgress: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+export interface ProgressInterface {
+  progress: number;
+}
