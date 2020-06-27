@@ -2,6 +2,7 @@ export interface TodoInterface {
   id: string;
   text: string;
   isCompleted: boolean;
+  progress: TodoProgressInterface;
 }
 
 // Todo form interface
@@ -35,7 +36,7 @@ export interface TodoItemInterface {
 
 export interface TodoProgressInterface {
   progress: ProgressInterface;
-  updateProgress: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  invokeProgress: (input: ProgressInterface) => void;
 }
 
 export interface ProgressInterface {

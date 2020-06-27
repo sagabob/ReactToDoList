@@ -19,6 +19,8 @@ const ProgressItem = (props: TodoProgressInterface) => {
         setprogressState(progressState);
         break;
     }
+
+    props.invokeProgress(progressState);
   }
 
   return (
