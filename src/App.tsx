@@ -79,7 +79,7 @@ const App = () => {
     <div className="todo-list-app">
       <h1 className="header">To-do List</h1>
 
-      <h3 className="sub-header">Working...</h3>
+      <h3 className="sub-header">Working</h3>
       <TodoForm handleTodoCreate={handleTodoCreate} />
 
       <TodoList
@@ -90,7 +90,9 @@ const App = () => {
         invokeProgress={handleInvokeProgress}
       />
 
-      <h3 className="sub-header-alt">Done...</h3>
+      <h3 className="sub-header-alt">
+        <span>✔</span>Done
+      </h3>
       <TodoListAlt todosAlt={todos} />
     </div>
   );

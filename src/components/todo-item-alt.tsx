@@ -11,7 +11,7 @@ const TodoItemAlt = (props: TodoInterface) => {
         <span className="todo-item-checked">✔</span>
       </div>
 
-      <div className="todo-item-input-wrapper">
+      <div className="todo-item-input-wrapper todo-done">
         <input value={props.text} readOnly />
       </div>
     </div>

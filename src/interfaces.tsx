@@ -44,3 +44,7 @@ export interface ProgressInterface {
   invokeProgress: (input: number) => void;
   progress: number;
 }
+
+export interface ProgressBarInterface {
+  progress: number;
+}
